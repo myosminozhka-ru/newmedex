@@ -1,0 +1,18 @@
+extends ../../components/section/section_fast
+
+block content
+    .nine
+        .nine__in 
+            .nine__title(data-text="Hire us") Hire us
+            form.nine__form
+                .nine__form-item
+                    input(type="text" placeholder="Name")
+                .nine__form-item.has-error
+                    input(type="email" placeholder="Email")
+                .nine__form-item
+                    input(type="text" placeholder="Job to do")
+                .nine__form-button
+                    button(type="submit")
+                        span.text Send
+                        span.icon
+                            img(src="img/svg/arrow.svg" alt="" width="100%")

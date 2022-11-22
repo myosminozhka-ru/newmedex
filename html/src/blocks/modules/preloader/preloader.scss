@@ -1,0 +1,23 @@
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // background: #091029;
+    // background: #000;
+    background: #000;
+    z-index: 300;
+    &__in {
+        position: absolute;
+        left: calc( 50% - #{vw(110)} );
+        top: calc( 50% - #{vw(110)} );
+        // transform: translate(-50%, -50%);
+        width: vw(220);
+        @media all and (max-width: 1023px) {
+            width: 88px;
+            left: calc(50% - 44px);
+            top: calc(50% - 44px);
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.fiveth {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // background: url('/img/globus.png') 50% 100%/cover no-repeat;
+    &__in {
+        width: 100%;
+        height: 100%;
+        padding: vw(270) vw(120) vw(247) vw(120);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        @media all and (max-width: 1023px) {
+            padding: 152px 15px 40px;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            flex: 1 1 auto;
+        }
+    }
+    &__shield {
+        // background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='582' height='697' viewBox='0 0 582 697' fill='none'%3E%3Cpath d='M3 111.399C3 94.8351 14.009 80.2891 29.9505 75.7902L280.95 4.95335C287.522 3.09879 294.478 3.09879 301.05 4.95335L552.049 75.7902C567.991 80.2891 579 94.8351 579 111.399V221.379V492.987C579 505.506 572.67 517.175 562.177 524.002L311.177 687.295C298.909 695.275 283.091 695.275 270.823 687.294L19.823 524.002C9.32983 517.175 3 505.506 3 492.987V111.399Z' fill='%231A2038' stroke='white' stroke-width='6'/%3E%3C/svg%3E") 50% 50% / 100% 100% no-repeat;
+        width: vw(582);
+        height: vw(705);
+        // padding: vw(53) vw(53) vw(132);
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: normal;
+        font-size: vw(46);
+        line-height: 140%;
+        // text-align: center;
+        color: #FFFFFF;
+        // text-shadow: 0px vw(-3) vw(74) rgba(33, 219, 239, 0.8), 0px vw(5) vw(28) rgba(3, 196, 161, 0.5);
+        @media all and (max-width: 1023px) {
+            // background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='582' height='697' viewBox='0 0 582 697' fill='none'%3E%3Cpath d='M3 111.399C3 94.8351 14.009 80.2891 29.9505 75.7902L280.95 4.95335C287.522 3.09879 294.478 3.09879 301.05 4.95335L552.049 75.7902C567.991 80.2891 579 94.8351 579 111.399V221.379V492.987C579 505.506 572.67 517.175 562.177 524.002L311.177 687.295C298.909 695.275 283.091 695.275 270.823 687.294L19.823 524.002C9.32983 517.175 3 505.506 3 492.987V111.399Z' fill='%231A2038' stroke='white' stroke-width='6'/%3E%3C/svg%3E") 50% 50% / 100% 100% no-repeat;
+            // width: 204px;
+            // height: 246px;
+            width: 100%;
+            padding: 0 19px 20px;        
+            font-size: 20px; 
+            text-align: justify;
+        }
+    }
+    &__shield-in {
+        width: 100%;
+    }
+}

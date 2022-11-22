@@ -1,0 +1,53 @@
+.sixth {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // background: url('/img/globus.png') 50% 100%/cover no-repeat;
+    &__in {
+        width: 100%;
+        height: 100%;
+        padding: vw(170) vw(120) vw(247) vw(120);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @media all and (max-width: 1023px) {
+            padding: 152px 15px 40px;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+        }
+    }
+    &__text {
+        width: vw(700);
+        font-size: vw(32);
+        line-height: vw(50);
+        color: #FFFFFF;
+        padding-top: vw(100);
+        .Typewriter__wrapper {
+            color: #FFFFFF;
+        }
+        span {
+            color: #21DBEF;
+        }
+        @media all and (max-width: 1023px) {
+            font-size: 20px;
+            line-height: 1.2;
+            padding-top: 0;
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: justify;
+        }
+        @media all and (max-width: 400px) and (max-height: 700px) {
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+        @media all and (max-width: 400px) and (max-height: 600px) {
+            margin-bottom: 0;
+            font-size: 15px;
+            text-align: justify;
+        }
+    }
+}

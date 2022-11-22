@@ -1,0 +1,48 @@
+extends layouts/default
+include helpers/mixins
+
+block variables
+	- const title = "MedEx"
+
+block header
+	include ../blocks/modules/preloader/preloader.pug
+	include ../blocks/modules/header/header.pug
+	include ../blocks/modules/animation/animation.pug
+	
+block content
+	
+	include ../blocks/modules/first/first.pug
+	include ../blocks/modules/second/second.pug
+	include ../blocks/modules/third/third.pug
+	include ../blocks/modules/fourth/fourth.pug
+	include ../blocks/modules/fiveth/fiveth.pug
+	include ../blocks/modules/sixth/sixth.pug
+	include ../blocks/modules/seventh/seventh.pug
+	include ../blocks/modules/eight/eight.pug
+	include ../blocks/modules/nine/nine.pug
+
+block scripts
+	script(id="vertexShader" type="x-shader/x-vertex").
+		varying vec3 vNormal;
+		varying vec3 vPositionNormal;
+		void main() 
+		{
+		vNormal = normalize( normalMatrix * normal );
+		vPositionNormal = normalize(( modelViewMatrix * vec4(position, 1.0) ).xyz);
+		gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+		}
+	script(id="fragmentShader" type="x-shader/x-vertex").
+		uniform vec3 glowColor;
+		uniform float b;
+		uniform float p;
+		uniform float s;
+		varying vec3 vNormal;
+		varying vec3 vPositionNormal;
+		void main() 
+		{
+		float a = pow( b + s * abs(dot(vNormal, vPositionNormal)), p );
+		gl_FragColor = vec4( glowColor, a );
+		}
+	script(type="module" src="scene/main.js")
+	script(src="js/main.js")
+	script(src="js/vendor.js")

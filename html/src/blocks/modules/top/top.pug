@@ -1,0 +1,17 @@
+a.to_top(href="#first").
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 48 48" fill="none">
+        <path d="M12 33L24 21L36 33" stroke="#0dffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 13H36" stroke="#0dffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+.modal(data-modal_id="123")
+    .modal__in
+        form.modal__form
+            .modal__form-item
+                input(type="text" placeholder="Username")
+            .modal__form-item
+                input(type="password" placeholder="Password")
+            .modal__form-button
+                button(type="submit")
+                    span.text Log In
+                    span.icon
+                        img(src="img/svg/arrow.svg" alt="" width="100%")

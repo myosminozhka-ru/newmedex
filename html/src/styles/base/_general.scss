@@ -1,0 +1,49 @@
+h1, h2, h3, h4, h5, h6, ul {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Gilroy, sans-serif;
+    background: #0b1534;
+    // background: #000;
+}
+
+.button {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: vw(12) vw(30);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #03C4A1;
+    border-radius: vw(5);
+    transition: background .3s ease-in-out;
+    &:hover {
+        background: #0ce5ec;
+    }
+    @media all and (max-width: 1023px) {
+        border-radius: 5px;
+        padding: 10px 15px;
+    }
+    .icon {
+        display: block;
+        width: vw(24);
+        margin-right: vw(10);
+        font-size: 0;
+        @media all and (max-width: 1023px) {
+            width: 18px;
+            margin-right: 10px;
+        }
+    }
+    .text {
+        font-size: vw(24);
+        line-height: 150%;
+        text-align: right;
+        color: #FFFFFF;
+        @media all and (max-width: 1023px) {
+            font-size: 16px;
+        }
+    }
+}
+
+.Typewriter__wrapper {
+    width: 100%;
+}

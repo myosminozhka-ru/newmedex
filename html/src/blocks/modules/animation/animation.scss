@@ -1,0 +1,76 @@
+.animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    &__in {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        video,
+        img {
+            height: 100%;
+        }
+    }
+}
+
+.mobile-arrows {
+    &__item {
+        z-index: 201;
+        position: fixed;
+        left: 0;
+        right: 0;
+        height: 23px;
+        text-align: center;
+        font-size: 0;
+        cursor: pointer;
+        svg path {
+            stroke: #fff;
+            transition: all 0.2s ease;
+        }
+        &--up {
+            top: 80px;
+            display: none;
+            @media all and (min-width: 1024px) {
+                top: 40px;
+            }
+        }
+        &--down {
+            bottom: 40px;
+            transform: rotate(180deg);
+        }
+        &:hover {
+            svg path {
+                stroke: #03C4A1;
+                transition: all 0.2s ease;
+            }
+        }
+    }
+}
+
+.counter {
+    @media all and (min-width: 1024px) {
+        display: none;
+    }
+    position: fixed;
+    left: 15px;
+    bottom: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;    
+    line-height: 1;
+    color: #FFFFFF;
+    &__current {
+        font-weight: bold;
+        font-size: 21px;
+    }
+    &__delim {
+        margin: 0 5px;
+    }
+}
