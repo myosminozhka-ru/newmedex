@@ -38,7 +38,7 @@ let rotationPivot = true;
 let scene = new THREE.Scene();
 
 const loader = new THREE.TextureLoader();
-const texture = loader.load('textures/NewSkyboxFace4.jpg');
+const texture = loader.load('textures/stars.jpg');
 
 scene.background = texture;
 
@@ -239,24 +239,24 @@ shield3StartPosition = {
 }
 
 let shieldPivotRotationZ = 0;
-
+let animateCoef = 1.6
 const animate = () => {
   requestAnimationFrame(animate);
   if (rotationPivot)
-    pivot.rotation.y += 0.01;
-  shieldPivotRotationZ += 0.01;
+    pivot.rotation.y += 0.01 / animateCoef;
+  shieldPivotRotationZ += 0.01 / animateCoef;
   if (shieldPivotRotationZ >= (Math.PI * 2)) {
     shieldPivotRotationZ = 0;
   }
-  shieldPivotRotationZ += 0.01;
+  shieldPivotRotationZ += 0.01 / animateCoef;
   if (line1) {
-    line1.rotation.y += 0.026;
+    line1.rotation.y += 0.026 / animateCoef;
   }
   if (line2) {
-    line2.rotation.y -= 0.016;
+    line2.rotation.y -= 0.016 / animateCoef;
   }
   if (line3) {
-    line3.rotation.y += 0.026;
+    line3.rotation.y += 0.026 / animateCoef;
     if (step == 1) {
       line3.scale.set(0, 0, 0);
     } else {
@@ -264,7 +264,7 @@ const animate = () => {
     }
   }
   if (line4) {
-    line4.rotation.y -= 0.016;
+    line4.rotation.y -= 0.016 / animateCoef;
   }
   if (!lockShiled1) {
     shield1Pivot.rotation.z = shieldPivotRotationZ;
