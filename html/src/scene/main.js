@@ -37,8 +37,8 @@ let rotationPivot = true;
 
 let scene = new THREE.Scene();
 
-const loader = new THREE.TextureLoader();
-const texture = loader.load('textures/stars.jpg');
+const loader = new THREE.CubeTextureLoader();
+const texture = loader.load(['textures/NewSkyboxFace4.jpg', 'textures/NewSkyboxFace5.jpg', 'textures/NewSkyboxFace2.jpg', 'textures/NewSkyboxFace6.jpg','textures/NewSkyboxFace1.jpg', 'textures/NewSkyboxFace3.jpg', ]);
 
 scene.background = texture;
 
