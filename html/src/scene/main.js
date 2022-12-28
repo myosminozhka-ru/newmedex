@@ -37,11 +37,6 @@ let rotationPivot = true;
 
 let scene = new THREE.Scene();
 
-const loader = new THREE.TextureLoader();
-const texture = loader.load('textures/NewSkyboxFace4.jpg');
-
-scene.background = texture;
-
 let camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 1000);
 
 scene.add(camera);
@@ -152,6 +147,11 @@ loadModel(modelurl2).then((model) => {
 });
 
 if (!isMobile) {
+  const loader = new THREE.CubeTextureLoader();
+  const texture = loader.load(['textures/NewSkyboxFace4.jpg', 'textures/NewSkyboxFace5.jpg', 'textures/NewSkyboxFace2.jpg', 'textures/NewSkyboxFace6.jpg','textures/NewSkyboxFace1.jpg', 'textures/NewSkyboxFace3.jpg', ]);
+
+  scene.background = texture;
+  
   loadModel(line6).then((model) => {
     model.traverse((node) => {
       if (node.isMesh) {
@@ -192,6 +192,11 @@ if (!isMobile) {
     line4 = modelc;
     scene.add(linePivot);
   });
+} else {
+  const loader = new THREE.TextureLoader();
+  const texture = loader.load('textures/NewSkyboxFace4.jpg');
+
+  scene.background = texture;
 }
 
 let shield1l = new THREE.Object3D();
@@ -239,24 +244,24 @@ shield3StartPosition = {
 }
 
 let shieldPivotRotationZ = 0;
-
+let animateCoef = 1.6
 const animate = () => {
   requestAnimationFrame(animate);
   if (rotationPivot)
-    pivot.rotation.y += 0.01;
-  shieldPivotRotationZ += 0.01;
+    pivot.rotation.y += 0.01 / animateCoef;
+  shieldPivotRotationZ += 0.01 / animateCoef;
   if (shieldPivotRotationZ >= (Math.PI * 2)) {
     shieldPivotRotationZ = 0;
   }
-  shieldPivotRotationZ += 0.01;
+  shieldPivotRotationZ += 0.01 / animateCoef;
   if (line1) {
-    line1.rotation.y += 0.026;
+    line1.rotation.y += 0.026 / animateCoef;
   }
   if (line2) {
-    line2.rotation.y -= 0.016;
+    line2.rotation.y -= 0.016 / animateCoef;
   }
   if (line3) {
-    line3.rotation.y += 0.026;
+    line3.rotation.y += 0.026 / animateCoef;
     if (step == 1) {
       line3.scale.set(0, 0, 0);
     } else {
@@ -264,7 +269,7 @@ const animate = () => {
     }
   }
   if (line4) {
-    line4.rotation.y -= 0.016;
+    line4.rotation.y -= 0.016 / animateCoef;
   }
   if (!lockShiled1) {
     shield1Pivot.rotation.z = shieldPivotRotationZ;
