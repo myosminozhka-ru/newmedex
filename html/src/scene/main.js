@@ -37,11 +37,14 @@ let rotationPivot = true;
 
 let scene = new THREE.Scene();
 
+<<<<<<< HEAD
+=======
 const loader = new THREE.CubeTextureLoader();
 const texture = loader.load(['textures/NewSkyboxFace4.jpg', 'textures/NewSkyboxFace5.jpg', 'textures/NewSkyboxFace2.jpg', 'textures/NewSkyboxFace6.jpg','textures/NewSkyboxFace1.jpg', 'textures/NewSkyboxFace3.jpg', ]);
 
 scene.background = texture;
 
+>>>>>>> master
 let camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 1000);
 
 scene.add(camera);
@@ -152,6 +155,11 @@ loadModel(modelurl2).then((model) => {
 });
 
 if (!isMobile) {
+  const loader = new THREE.CubeTextureLoader();
+  const texture = loader.load(['textures/NewSkyboxFace4.jpg', 'textures/NewSkyboxFace5.jpg', 'textures/NewSkyboxFace2.jpg', 'textures/NewSkyboxFace6.jpg','textures/NewSkyboxFace1.jpg', 'textures/NewSkyboxFace3.jpg', ]);
+
+  scene.background = texture;
+  
   loadModel(line6).then((model) => {
     model.traverse((node) => {
       if (node.isMesh) {
@@ -192,6 +200,11 @@ if (!isMobile) {
     line4 = modelc;
     scene.add(linePivot);
   });
+} else {
+  const loader = new THREE.TextureLoader();
+  const texture = loader.load('textures/NewSkyboxFace4.jpg');
+
+  scene.background = texture;
 }
 
 let shield1l = new THREE.Object3D();
