@@ -73,7 +73,8 @@
             box-sizing: border-box;
             height: vw(76);
             padding: 0;
-            background: transparent url('../img/svg/arrow.svg') #{vw(-31)} 50%/ #{vw(31)} no-repeat;
+            // background: transparent url('../img/svg/arrow.svg') #{vw(-31)} 50%/ #{vw(31)} no-repeat;
+            background: transparent url('../img/svg/arrow.svg') -31px 50%/ 31px no-repeat;
             border: none;
             pointer-events: none;
             // border-bottom: 2px solid #fff;

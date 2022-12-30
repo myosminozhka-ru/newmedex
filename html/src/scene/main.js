@@ -46,11 +46,11 @@ const modelurl = "./models/border.glb";
       const loader = new THREE.CubeTextureLoader();
       const texture = loader.load([
         'textures/NewSkyboxFace4.jpg', // Left
-        'textures/NewSkyboxFace5.jpg', // Right
-        'textures/NewSkyboxFace2.jpg', // Top
-        'textures/NewSkyboxFace6.jpg', // Bottom
-        'textures/NewSkyboxFace1.jpg', // Back
-        'textures/NewSkyboxFace3.jpg', // Forward
+        'textures/NewSkyboxFace4.jpg', // Right
+        'textures/NewSkyboxFace4.jpg', // Top
+        'textures/NewSkyboxFace4.jpg', // Bottom
+        'textures/NewSkyboxFace4.jpg', // Back
+        'textures/NewSkyboxFace4.jpg', // Forward
       ]);
       scene.background = texture;
     } else {
