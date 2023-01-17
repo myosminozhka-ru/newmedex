@@ -17,7 +17,7 @@ window.typewriterText = new Typewriter('.first__name--text', {
 
 $(function() {
     function moveItem(item) {
-        gsap.to(item, 0.2, {
+        gsap.to(item, 0.1, {
             transform: `scale(1) translate(0, 0)`,
             fillOpacity: 1,
             onComplete: () => {
@@ -38,7 +38,7 @@ $(function() {
         let innerWidth = $('.preloader__in').width();
         let innerHeight = $('.preloader__in').height();
         if (window.innerWidth > 1023) {
-            gsap.to('.preloader__in', 0.9, {
+            gsap.to('.preloader__in', 0.5, {
                 left: () => {
                     return 100 * 100 / 1920 + 'vw'
                 },
